@@ -1,8 +1,8 @@
 // tests/api/helpers.rs
 
 // dependencies
-use actix_web_sqlx_starter::configuration::{get_configuration, DatabaseSettings};
-use actix_web_sqlx_starter::startup::{get_connection_pool, Application};
+use actix_web_sqlx_starter::configuration::{DatabaseSettings, get_configuration};
+use actix_web_sqlx_starter::startup::{Application, get_connection_pool};
 use actix_web_sqlx_starter::telemetry::{get_subscriber, init_subscriber};
 use secrecy::SecretString;
 use sqlx::{Connection, Executor, PgConnection, PgPool};
@@ -35,11 +35,11 @@ pub async fn spawn_app() -> TestApp {
 
     let configuration = {
         let mut c = get_configuration().expect("Failed to read configuration.");
-        
+
         c.database.database_name = Uuid::new_v4().to_string();
-        
+
         c.application.port = 0;
-        
+
         c
     };
 
