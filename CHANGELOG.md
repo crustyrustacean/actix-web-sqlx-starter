@@ -1,6 +1,16 @@
 # Changelog
 
-All notable changes to the Actix Web Starter project will be documented in this file.
+All notable changes to the Actix Web SQLx Starter project will be documented in this file.
+
+## [0.3.0] - 2026-11-12
+
+### General cleanup and dependency update
+
+- Align the common application structure with `actix-web-starter`.
+- Version the health endpoint under `/api/v1` and test unsupported API paths.
+- Refresh the README with setup, configuration, migration, and development guidance.
+- Normalize dependency version requirements and disable unnecessary Actix Web default features.
+- Correct the repository URL and application log name.
 
 ## [0.2.1] - 2026-09-20
 

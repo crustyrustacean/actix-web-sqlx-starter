@@ -5,5 +5,5 @@ use actix_web::{HttpResponse, Responder};
 
 /// health check endpoint
 pub async fn health_check() -> impl Responder {
-    HttpResponse::Ok().finish()
+    HttpResponse::Ok()
 }

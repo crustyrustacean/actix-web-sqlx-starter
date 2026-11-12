@@ -7,7 +7,11 @@ use actix_web_sqlx_starter::telemetry::{get_subscriber, init_subscriber};
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let subscriber = get_subscriber("actix-web-starter".into(), "info".into(), std::io::stdout);
+    let subscriber = get_subscriber(
+        "actix-web-sqlx-starter".into(),
+        "info".into(),
+        std::io::stdout,
+    );
     init_subscriber(subscriber);
     let configuration = get_configuration().expect("Failed to read configuration.");
     let application = Application::build(configuration.clone()).await?;
